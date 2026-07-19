@@ -84,14 +84,6 @@
   white-space: nowrap;
 }
 
-.logo-image {
-  height: 38px;
-  width: auto;
-  object-fit: contain;
-  mix-blend-mode: multiply;
-  display: block;
-}
-
 .logo-icon {
   width: 24px;
   height: 24px;
