@@ -203,6 +203,17 @@
   z-index: 999;
 }
 
+/* Invisible hover bridge to prevent menu from closing when moving mouse */
+.mega-menu-panel::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: transparent;
+}
+
 .nav-item.has-mega-menu:hover .mega-menu-panel {
   opacity: 1;
   visibility: visible;
@@ -232,6 +243,17 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-xxs);
+}
+
+/* Invisible hover bridge */
+.standard-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: transparent;
 }
 
 .nav-item.has-standard-dropdown:hover .standard-dropdown {
