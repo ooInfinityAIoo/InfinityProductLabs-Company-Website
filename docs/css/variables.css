@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Color Palette (High-contrast corporate light theme inspired by LTTS) */
+  --bg-primary: hsl(0, 0%, 100%);             /* Pure White */
+  --bg-secondary: hsl(210, 20%, 98%);         /* Light Cool Off-white */
+  --bg-card: hsl(0, 0%, 100%);                /* White Card */
+  --bg-card-hover: hsl(210, 20%, 96%);        /* Slightly darker off-white for hover */
+  
+  --text-primary: hsl(210, 30%, 12%);         /* Charcoal Dark Navy */
+  --text-secondary: hsl(210, 15%, 35%);       /* Slate Gray */
+  --text-muted: hsl(210, 10%, 55%);           /* Light Gray Muted Text */
+  
+  --accent-primary: hsl(205, 100%, 28%);       /* Corporate Royal Blue #004b87 */
+  --accent-secondary: hsl(45, 100%, 48%);      /* LTTS Accent Gold/Yellow #ffcc29 */
+  --accent-tertiary: hsl(200, 80%, 42%);       /* Tech Teal/Blue */
+  --accent-success: hsl(142, 72%, 35%);        /* Forest Emerald Success */
+  
+  --accent-primary-rgb: 0, 75, 135;
+  --accent-secondary-rgb: 255, 204, 41;
+  
+  /* Borders and UI elements */
+  --border-color: hsla(210, 15%, 88%, 0.8);
+  --border-color-hover: hsla(210, 15%, 75%, 1.0);
+  --glass-blur: 8px;
+  
+  /* Typography */
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Font Sizes (Fluid Typography using clamp) */
+  --fs-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --fs-sm: clamp(0.875rem, 0.8rem + 0.3vw, 1rem);
+  --fs-base: clamp(1rem, 0.95rem + 0.4vw, 1.125rem);
+  --fs-md: clamp(1.125rem, 1.05rem + 0.5vw, 1.25rem);
+  --fs-lg: clamp(1.25rem, 1.15rem + 0.6vw, 1.5rem);
+  --fs-xl: clamp(1.5rem, 1.35rem + 0.8vw, 2rem);
+  --fs-2xl: clamp(2rem, 1.75rem + 1.2vw, 3rem);
+  --fs-3xl: clamp(2.5rem, 2.1rem + 2vw, 4.5rem);
+  
+  /* Spacing */
+  --space-xxs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 5rem;
+  
+  /* Border Radii */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  
+  /* Shadows and Glows (Softened for light backgrounds) */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
+  --glow-primary: 0 0 30px hsla(205, 100%, 28%, 0.15);
+  --glow-secondary: 0 0 30px hsla(45, 100%, 48%, 0.15);
+  
+  /* Transitions */
+  --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-elastic: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}

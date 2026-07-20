@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Infinity Product Labs</title>
+  <meta name="description" content="Learn about Infinity Product Labs, our mission to design scalable cognitive infrastructure, and the core team engineering the next generation of cloud architectures.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css?v=2.0">
+  <link rel="stylesheet" href="css/reset.css?v=2.0">
+  <link rel="stylesheet" href="css/layout.css?v=2.0">
+  <link rel="stylesheet" href="css/components.css?v=2.0">
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Floating Background Glows -->
+  <div class="glow-orb orb-primary"></div>
+  <div class="glow-orb orb-secondary"></div>
+
+  <!-- Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      <a href="index.html" class="logo" aria-label="Infinity Product Labs Home">
+        <span class="logo-icon" aria-hidden="true" style="border-radius: 4px;">∞</span>
+        <span class="logo-text">Infinity Product Labs</span>
+      </a>
+      
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <!-- Products Mega Menu -->
+          <li class="nav-item has-mega-menu">
+            <a href="index.html" class="nav-link has-submenu">Products</a>
+            <div class="mega-menu-panel">
+              <div class="mega-grid">
+                <!-- Column 1 -->
+                <div class="mega-col">
+                  <h4 class="mega-heading">Core & Channels</h4>
+                  <div class="mega-links">
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">∞</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">BankingFramework</span>
+                        <span class="mega-item-desc">Universal financial logic & ledger substrate</span>
+                      </div>
+                    </a>
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">∞</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">CoreBanking</span>
+                        <span class="mega-item-desc">High-throughput real-time ledger accounting</span>
+                      </div>
+                    </a>
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">∞</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Virtual Accounts</span>
+                        <span class="mega-item-desc">Dynamic virtual accounts & ledger segregation</span>
+                      </div>
+                    </a>
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">∞</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Cards</span>
+                        <span class="mega-item-desc">Issuance pipelines and payment processing rails</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!-- Column 2 -->
+                <div class="mega-col">
+                  <h4 class="mega-heading">Lending & Structured</h4>
+                  <div class="mega-links">
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">∞</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Commercial Lending</span>
+                        <span class="mega-item-desc">Corporate credit assessment & facilities management</span>
+                      </div>
+                    </a>
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">∞</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Retail Lending</span>
+                        <span class="mega-item-desc">Automated consumer origination & credit scoring</span>
+                      </div>
+                    </a>
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">∞</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Trade Finance</span>
+                        <span class="mega-item-desc">Import/export credit & letter of credit cycles</span>
+                      </div>
+                    </a>
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">∞</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Structured Finance</span>
+                        <span class="mega-item-desc">Asset-backed securitization & complex credit engines</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!-- Column 3 -->
+                <div class="mega-col">
+                  <h4 class="mega-heading">Liquidity & Cash</h4>
+                  <div class="mega-links">
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">∞</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Payment Hub</span>
+                        <span class="mega-item-desc">Universal payment orchestration and clearing rails</span>
+                      </div>
+                    </a>
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">∞</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Supply Chain Finance and Factoring</span>
+                        <span class="mega-item-desc">Receivables financing & early payment discounting</span>
+                      </div>
+                    </a>
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">∞</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">LiquidityManagement</span>
+                        <span class="mega-item-desc">Dynamic sweeps, cash pooling, & yield optimization</span>
+                      </div>
+                    </a>
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">∞</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">TreasuryManagement</span>
+                        <span class="mega-item-desc">Risk boundaries, hedging strategies, & cash position</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!-- Column 4: Featured Showcase -->
+                <div class="mega-featured-col">
+                  <img src="images/featured_menu.png" alt="Product Framework Analytics" class="mega-featured-img">
+                  <span class="mega-featured-title">Infinity Ecosystem</span>
+                  <span class="mega-featured-desc">Deploy next-generation transaction environments with unified control planes.</span>
+                  <a href="services.html" class="btn btn-primary" style="padding: 0.4rem 1rem; font-size: var(--fs-xs); width: fit-content; margin-top: 4px;">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <!-- Services Mega Menu -->
+          <li class="nav-item has-mega-menu">
+            <a href="services.html" class="nav-link has-submenu">Services</a>
+            <div class="mega-menu-panel">
+              <div class="mega-grid">
+                <!-- Column 1 -->
+                <div class="mega-col">
+                  <h4 class="mega-heading">AI & Agentic Engines</h4>
+                  <div class="mega-links">
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">🧠</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Infinity Product Labs Mind</span>
+                        <span class="mega-item-desc">Autonomous reasoning and LLM agent pipelines</span>
+                      </div>
+                    </a>
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">⚙️</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Infinity Product Labs Core</span>
+                        <span class="mega-item-desc">Cognitive subgrids and multi-agent coordination</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!-- Column 2 -->
+                <div class="mega-col">
+                  <h4 class="mega-heading">Cloud Orchestration</h4>
+                  <div class="mega-links">
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">🌐</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Cloud Synthetics</span>
+                        <span class="mega-item-desc">Automated multicloud provisioning and syncing</span>
+                      </div>
+                    </a>
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">⚡</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Edge Flow</span>
+                        <span class="mega-item-desc">Telemetry-aware serverless auto-scaling triggers</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!-- Column 3 -->
+                <div class="mega-col">
+                  <h4 class="mega-heading">Performance Engine</h4>
+                  <div class="mega-links">
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">🚀</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Cache Matrix</span>
+                        <span class="mega-item-desc">Sub-millisecond query caching tier</span>
+                      </div>
+                    </a>
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">📊</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Stream Telemetry</span>
+                        <span class="mega-item-desc">Real-time metrics logging and query audit logs</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!-- Column 4: Featured Showcase (LTTS style) -->
+                <div class="mega-featured-col">
+                  <img src="images/featured_menu.png" alt="Analytics Dashboard Showcase" class="mega-featured-img">
+                  <span class="mega-featured-title">Platform Insights</span>
+                  <span class="mega-featured-desc">Explore how our analytics dashboard manages multicloud systems dynamically.</span>
+                  <a href="services.html" class="btn btn-primary" style="padding: 0.4rem 1rem; font-size: var(--fs-xs); width: fit-content; margin-top: 4px;">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <!-- Sectors Mega Menu -->
+          <li class="nav-item has-mega-menu">
+            <a href="#" class="nav-link has-submenu">Sectors</a>
+            <div class="mega-menu-panel">
+              <div class="mega-grid">
+                <!-- Column 1 -->
+                <div class="mega-col">
+                  <h4 class="mega-heading">Financial Tech</h4>
+                  <div class="mega-links">
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">🏦</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Cognitive Finance</span>
+                        <span class="mega-item-desc">Sub-second transaction processing & fraud detection</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!-- Column 2 -->
+                <div class="mega-col">
+                  <h4 class="mega-heading">Operations</h4>
+                  <div class="mega-links">
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">📦</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Smart Logistics</span>
+                        <span class="mega-item-desc">Autonomous routing & inventory predictions</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!-- Column 3 -->
+                <div class="mega-col">
+                  <h4 class="mega-heading">SaaS & Scale</h4>
+                  <div class="mega-links">
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">🔌</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Enterprise SaaS</span>
+                        <span class="mega-item-desc">Multi-tenant orchestration for digital products</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!-- Column 4: Featured Showcase (LTTS style) -->
+                <div class="mega-featured-col">
+                  <img src="images/slider_cloud.png" alt="Fintech Solutions" class="mega-featured-img">
+                  <span class="mega-featured-title">Fintech Architecture</span>
+                  <span class="mega-featured-desc">See how we processed $1.2B with sub-millisecond fraud validation latency.</span>
+                  <a href="services.html" class="btn btn-primary" style="padding: 0.4rem 1rem; font-size: var(--fs-xs); width: fit-content; margin-top: 4px;">Read Case Study</a>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Design Studios Mega Menu -->
+          <li class="nav-item has-mega-menu">
+            <a href="#" class="nav-link has-submenu">Design Studios</a>
+            <div class="mega-menu-panel">
+              <div class="mega-grid">
+                <!-- Column 1 -->
+                <div class="mega-col">
+                  <h4 class="mega-heading">Core & Experience</h4>
+                  <div class="mega-links">
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">✨</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Immersive Interface Studio</span>
+                        <span class="mega-item-desc">Spatial 3D overlays and AR/VR systems design</span>
+                      </div>
+                    </a>
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">🧠</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Cognitive Design Studio</span>
+                        <span class="mega-item-desc">Human-centered UI mapping & cognitive tests</span>
+                      </div>
+                    </a>
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">⚡</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Haptic & Motion Studio</span>
+                        <span class="mega-item-desc">Fluid physics-based transition design</span>
+                      </div>
+                    </a>
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">♿</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Accessibility Lab</span>
+                        <span class="mega-item-desc">A11y inclusive audits and layout patterns</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!-- Column 2 -->
+                <div class="mega-col">
+                  <h4 class="mega-heading">Platform Systems</h4>
+                  <div class="mega-links">
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">🔗</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Distributed Ledger Studio</span>
+                        <span class="mega-item-desc">Transaction design & consensus flows</span>
+                      </div>
+                    </a>
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">🔌</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">API & Integration Studio</span>
+                        <span class="mega-item-desc">API schema design and client integration</span>
+                      </div>
+                    </a>
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">🏎️</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">High-Velocity Computing Lab</span>
+                        <span class="mega-item-desc">Sub-millisecond latency visualization UI</span>
+                      </div>
+                    </a>
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">☁️</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Cloud Native Architecture Lab</span>
+                        <span class="mega-item-desc">System orchestration and container visualization</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!-- Column 3 -->
+                <div class="mega-col">
+                  <h4 class="mega-heading">AI & Trust Labs</h4>
+                  <div class="mega-links">
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">🤖</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Agentic Systems Studio</span>
+                        <span class="mega-item-desc">LLM agent control panels & prompt graphs</span>
+                      </div>
+                    </a>
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">🔒</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Cryptographic Protocol Lab</span>
+                        <span class="mega-item-desc">ZK proof visualizations & secure data keys</span>
+                      </div>
+                    </a>
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">💥</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Resilience & Chaos Lab</span>
+                        <span class="mega-item-desc">Fault injection control and safety screens</span>
+                      </div>
+                    </a>
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">🛡️</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Zero-Trust Security Studio</span>
+                        <span class="mega-item-desc">IAM flow design and authentication grids</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!-- Column 4: Featured Showcase -->
+                <div class="mega-featured-col">
+                  <img src="images/featured_menu.png" alt="Spatial Design Showcase" class="mega-featured-img">
+                  <span class="mega-featured-title">Design Showcase</span>
+                  <span class="mega-featured-desc">Explore spatial designs and interactive cognitive prototypes built by our 16 global studios.</span>
+                  <a href="services.html" class="btn btn-primary" style="padding: 0.4rem 1rem; font-size: var(--fs-xs); width: fit-content; margin-top: 4px;">Explore Studios</a>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Platform Architecture Mega Menu -->
+          <li class="nav-item has-mega-menu">
+            <a href="#" class="nav-link has-submenu">Platform Architecture</a>
+            <div class="mega-menu-panel">
+              <div class="mega-grid">
+                <!-- Column 1 -->
+                <div class="mega-col">
+                  <h4 class="mega-heading">Data Plane</h4>
+                  <div class="mega-links">
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">💾</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Transaction Ledger</span>
+                        <span class="mega-item-desc">Distributed state replication & auditing rails</span>
+                      </div>
+                    </a>
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">🗄️</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Cache Subgrid</span>
+                        <span class="mega-item-desc">Distributed memory key-value query acceleration</span>
+                      </div>
+                    </a>
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">📈</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Analytics Engine</span>
+                        <span class="mega-item-desc">High-throughput real-time telemetry pipelines</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!-- Column 2 -->
+                <div class="mega-col">
+                  <h4 class="mega-heading">Control Plane</h4>
+                  <div class="mega-links">
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">🎛️</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Orchestration Mesh</span>
+                        <span class="mega-item-desc">Multicloud container routing & load balancing</span>
+                      </div>
+                    </a>
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">🚀</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Auto-Scaling Trigger</span>
+                        <span class="mega-item-desc">Telemetry resource feedback and container provisioning</span>
+                      </div>
+                    </a>
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">🔀</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Routing Gateway</span>
+                        <span class="mega-item-desc">Edge reverse proxy & path-based routing gateway</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!-- Column 3 -->
+                <div class="mega-col">
+                  <h4 class="mega-heading">Security & Identity</h4>
+                  <div class="mega-links">
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">🛡️</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Access Controller</span>
+                        <span class="mega-item-desc">Zero-trust access authentication & token checking</span>
+                      </div>
+                    </a>
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">🔑</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Cryptographic Core</span>
+                        <span class="mega-item-desc">Envelope encryption, key management, & credential vault</span>
+                      </div>
+                    </a>
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">⚖️</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Policy Evaluator</span>
+                        <span class="mega-item-desc">Dynamic runtime validation & compliance rules</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!-- Column 4: Featured Showcase -->
+                <div class="mega-featured-col">
+                  <img src="images/slider_cloud.png" alt="Cloud Architecture Overview" class="mega-featured-img">
+                  <span class="mega-featured-title">Architecture Overview</span>
+                  <span class="mega-featured-desc">Learn how we process financial scale with sub-millisecond fraud validation latency and 99.999% uptime.</span>
+                  <a href="services.html" class="btn btn-primary" style="padding: 0.4rem 1rem; font-size: var(--fs-xs); width: fit-content; margin-top: 4px;">View Diagram</a>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Resources Mega Menu -->
+          <li class="nav-item has-mega-menu">
+            <a href="#" class="nav-link has-submenu">Resources</a>
+            <div class="mega-menu-panel">
+              <div class="mega-grid">
+                <!-- Column 1 -->
+                <div class="mega-col">
+                  <h4 class="mega-heading">Read & Telemetry</h4>
+                  <div class="mega-links">
+                    <a href="about.html" class="mega-item">
+                      <div class="mega-item-icon">📝</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Architecture Blog</span>
+                        <span class="mega-item-desc">Deep technical insights on database speeds</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!-- Column 2 -->
+                <div class="mega-col">
+                  <h4 class="mega-heading">Corporate Wins</h4>
+                  <div class="mega-links">
+                    <a href="about.html" class="mega-item">
+                      <div class="mega-item-icon">🏆</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Success Matrix</span>
+                        <span class="mega-item-desc">How we achieve 45% energy cost reductions</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!-- Column 3 -->
+                <div class="mega-col">
+                  <h4 class="mega-heading">Technical Specs</h4>
+                  <div class="mega-links">
+                    <a href="services.html" class="mega-item">
+                      <div class="mega-item-icon">📖</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Engineering Docs</span>
+                        <span class="mega-item-desc">API specifications and code setup guidelines</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!-- Column 4: Featured Showcase (LTTS style) -->
+                <div class="mega-featured-col">
+                  <img src="images/insight_energy.png" alt="Energy Analytics case study" class="mega-featured-img">
+                  <span class="mega-featured-title">Client Energy Efficiency</span>
+                  <span class="mega-featured-desc">How we optimized server infrastructure to reduce client electricity footprint by 45%.</span>
+                  <a href="about.html" class="btn btn-primary" style="padding: 0.4rem 1rem; font-size: var(--fs-xs); width: fit-content; margin-top: 4px;">View Metrics</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <!-- Company Standard Dropdown -->
+          <li class="nav-item has-standard-dropdown">
+            <a href="about.html" class="nav-link has-submenu">Company</a>
+            <div class="standard-dropdown">
+              <a href="about.html" class="dropdown-link">About Us</a>
+              <a href="about.html#team" class="dropdown-link">Our Evolution</a>
+              <a href="contact.html" class="dropdown-link">Contact Hub</a>
+            </div>
+          </li>
+        </ul>
+        <a href="contact.html" class="nav-cta">Initiate Consultation</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header> </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- About Intro Section -->
+    <section class="about-hero" style="padding: var(--space-2xl) 0; position: relative; z-index: 1;" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: var(--space-2xl);">
+          <span class="section-tag">Our Identity</span>
+          <h1 class="section-title" id="about-title">Engineering High-Velocity Cognitive Infrastructure</h1>
+          <p class="section-subtitle" style="font-size: var(--fs-md);">Formed at the intersection of enterprise financial systems and visual Canva studios, we architect high-performance cognitive products and zero-code-debt orchestration substrates.</p>
+        </div>
+
+        <!-- Vision/Mission Grid -->
+        <div class="features-grid" style="margin-bottom: var(--space-2xl);">
+          <div class="glass-card" style="padding: var(--space-xl);">
+            <div class="card-icon" style="background: hsla(205, 100%, 28%, 0.05); color: var(--accent-primary); border-color: rgba(0, 75, 135, 0.1);">🎯</div>
+            <h3>Our Mission</h3>
+            <p style="color: var(--text-secondary); margin-top: var(--space-xs); font-size: var(--fs-sm); line-height: 1.6;">To eliminate hardcoded business logic by building a Logic-as-Data substrate, empowering enterprises to visually configure workflows, rules, and math graphs with sub-millisecond execution speeds.</p>
+          </div>
+
+          <div class="glass-card" style="padding: var(--space-xl);">
+            <div class="card-icon" style="background: hsla(205, 100%, 28%, 0.05); color: var(--accent-primary); border-color: rgba(0, 75, 135, 0.1);">👁️</div>
+            <h3>Our Vision</h3>
+            <p style="color: var(--text-secondary); margin-top: var(--space-xs); font-size: var(--fs-sm); line-height: 1.6;">We envision a world where financial products, visual Design Studios, and ISO 20022 semantic data registries are seamlessly unified, backed by 4-Eye Maker-Checker security and PII Dynamic Data Masking.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline / Growth Section -->
+    <section class="timeline-section" style="padding: var(--space-2xl) 0; background: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); position: relative; z-index: 1;" aria-labelledby="timeline-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Evolution</span>
+          <h2 class="section-title" id="timeline-title">Our Growth Vector</h2>
+          <p class="section-subtitle">A short history of how we established enterprise stability while maintaining startup velocity.</p>
+        </div>
+
+        <div style="max-width: 800px; margin: 0 auto; position: relative;">
+          <!-- Timeline Line -->
+          <div style="position: absolute; left: 24px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--accent-primary) 0%, var(--accent-tertiary) 100%);"></div>
+
+          <!-- Timeline Items -->
+          <div style="display: flex; gap: var(--space-lg); margin-bottom: var(--space-xl); position: relative; padding-left: 56px;">
+            <div style="position: absolute; left: 15px; top: 4px; width: 20px; height: 20px; border-radius: var(--radius-full); background: var(--accent-primary); border: 4px solid var(--bg-primary);"></div>
+            <div>
+              <span style="font-family: var(--font-heading); font-size: var(--fs-sm); font-weight: 700; color: var(--accent-primary);">2024 • Setup & Inception</span>
+              <h3 style="font-size: var(--fs-md); margin-top: var(--space-xxs);">Forming the Foundation</h3>
+              <p style="color: var(--text-secondary); font-size: var(--fs-sm); margin-top: var(--space-xxs); line-height: 1.6;">Founded by industry database veterans who realized existing cloud pipelines were too sluggish to sustain real-time AI agents.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: var(--space-lg); margin-bottom: var(--space-xl); position: relative; padding-left: 56px;">
+            <div style="position: absolute; left: 15px; top: 4px; width: 20px; height: 20px; border-radius: var(--radius-full); background: var(--accent-tertiary); border: 4px solid var(--bg-primary);"></div>
+            <div>
+              <span style="font-family: var(--font-heading); font-size: var(--fs-sm); font-weight: 700; color: var(--accent-tertiary);">2025 • Acceleration</span>
+              <h3 style="font-size: var(--fs-md); margin-top: var(--space-xxs);">Orchestration Core Release</h3>
+              <p style="color: var(--text-secondary); font-size: var(--fs-sm); margin-top: var(--space-xxs); line-height: 1.6;">Launched our flagship microservice framework, letting enterprise engineering teams deploy models directly onto edge locations.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: var(--space-lg); position: relative; padding-left: 56px;">
+            <div style="position: absolute; left: 15px; top: 4px; width: 20px; height: 20px; border-radius: var(--radius-full); background: var(--accent-primary); border: 4px solid var(--bg-primary);"></div>
+            <div>
+              <span style="font-family: var(--font-heading); font-size: var(--fs-sm); font-weight: 700; color: var(--accent-primary);">2026 • Cognitive Maturity</span>
+              <h3 style="font-size: var(--fs-md); margin-top: var(--space-xxs);">Next-Gen Partnership Scale</h3>
+              <p style="color: var(--text-secondary); font-size: var(--fs-sm); margin-top: var(--space-xxs); line-height: 1.6;">Scaling cognitive services to support over 150M daily transactions for 120 global enterprise clients.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Philosophy Section -->
+    <section style="padding: var(--space-2xl) 0;" aria-label="Our values">
+      <div class="container" style="display: grid; grid-template-columns: 1fr 1.2fr; gap: var(--space-2xl); align-items: center;">
+        <div>
+          <span class="section-tag" style="margin-bottom: var(--space-xs);">How We Think</span>
+          <h2 style="font-size: var(--fs-2xl); margin-bottom: var(--space-md);">Values That Drive Code Integrity</h2>
+          <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: var(--space-md);">We do not believe in complex, nested layers that serve only to delay query resolutions. We build direct, well-documented, and resilient endpoints.</p>
+          <a href="services.html" class="btn btn-secondary">Explore Capabilities</a>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: var(--space-md);">
+          <div class="glass-card" style="padding: var(--space-md) var(--space-lg); border-left: 4px solid var(--accent-primary);">
+            <h4 style="font-size: var(--fs-sm); text-transform: uppercase; color: var(--accent-primary);">Zero Artificial Bloat</h4>
+            <p style="font-size: var(--fs-xs); color: var(--text-muted); margin-top: 4px;">We exclude redundant modules and dependencies from our deployment bundles to secure lightning-fast render paths.</p>
+          </div>
+          <div class="glass-card" style="padding: var(--space-md) var(--space-lg); border-left: 4px solid var(--accent-secondary);">
+            <h4 style="font-size: var(--fs-sm); text-transform: uppercase; color: var(--accent-secondary);">Strict Secure Layers</h4>
+            <p style="font-size: var(--fs-xs); color: var(--text-muted); margin-top: 4px;">Security is integrated directly into the initial architecture design, avoiding after-the-fact wrapper script patches.</p>
+          </div>
+          <div class="glass-card" style="padding: var(--space-md) var(--space-lg); border-left: 4px solid var(--accent-tertiary);">
+            <h4 style="font-size: var(--fs-sm); text-transform: uppercase; color: var(--accent-tertiary);">Transparent Systems</h4>
+            <p style="font-size: var(--fs-xs); color: var(--text-muted); margin-top: 4px;">Our systems feature clear logging profiles, helping developers track telemetry details effortlessly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" aria-label="Infinity Product Labs Home">
+            <span class="logo-icon" aria-hidden="true" style="border-radius: 4px;">∞</span>
+            <span class="logo-text">Infinity Product Labs</span>
+          </a>
+          <p>Architecting cognitive environments and cloud systems for high-performance scale.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Ecosystem</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">AI Engines</a></li>
+            <li><a href="services.html">Cloud Synthetics</a></li>
+            <li><a href="services.html">Optimization</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Hub</a></li>
+            <li><a href="about.html">Architecture Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="#">Privacy Protocol</a></li>
+            <li><a href="#">Terms of Vector</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Infinity Product Labs. All computational vectors reserved.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-icon" aria-label="GitHub"><span aria-hidden="true">⌨️</span></a>
+          <a href="#" class="social-icon" aria-label="LinkedIn"><span aria-hidden="true">🔗</span></a>
+          <a href="#" class="social-icon" aria-label="Twitter"><span aria-hidden="true">🐦</span></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

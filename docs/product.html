@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Showcase | Infinity Product Labs</title>
+  <meta name="description" content="Explore high-velocity enterprise financial product engines powered by a Logic-as-Data substrate and ISO 20022 semantic data registry.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css?v=2.0">
+  <link rel="stylesheet" href="css/reset.css?v=2.0">
+  <link rel="stylesheet" href="css/layout.css?v=2.0">
+  <link rel="stylesheet" href="css/components.css?v=2.0">
+  <style>
+    .simulator-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: var(--space-xl);
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+    .node-canvas {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin: var(--space-lg) 0;
+      flex-wrap: wrap;
+    }
+    .node-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+      flex: 1;
+      min-width: 180px;
+      text-align: center;
+      transition: var(--transition-smooth);
+      position: relative;
+    }
+    .node-card.active {
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 15px hsla(205, 100%, 28%, 0.15);
+      background: #fff;
+    }
+    .flow-connector {
+      font-size: 1.5rem;
+      color: var(--accent-primary);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.4; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.15); }
+    }
+    .stat-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
+      background: hsla(205, 100%, 28%, 0.08);
+      color: var(--accent-primary);
+      font-weight: 700;
+      font-size: var(--fs-xs);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Floating Background Glows -->
+  <div class="glow-orb orb-primary"></div>
+  <div class="glow-orb orb-secondary"></div>
+
+  <!-- Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      <a href="index.html" class="logo" aria-label="Infinity Product Labs Home">
+        <span class="logo-icon" aria-hidden="true" style="border-radius: 4px;">∞</span>
+        <span class="logo-text">Infinity Product Labs</span>
+      </a>
+      
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <!-- Products Mega Menu -->
+          <li class="nav-item has-mega-menu">
+            <a href="product.html?id=corebanking" class="nav-link has-submenu active">Products</a>
+            <div class="mega-menu-panel">
+              <div class="mega-grid">
+                <!-- Column 1 -->
+                <div class="mega-col">
+                  <h4 class="mega-heading">Core & Channels</h4>
+                  <div class="mega-links">
+                    <a href="product.html?id=bankingframework" class="mega-item">
+                      <div class="mega-item-icon">∞</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">BankingFramework</span>
+                        <span class="mega-item-desc">Universal financial logic & ledger substrate</span>
+                      </div>
+                    </a>
+                    <a href="product.html?id=corebanking" class="mega-item">
+                      <div class="mega-item-icon">∞</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">CoreBanking</span>
+                        <span class="mega-item-desc">High-throughput real-time ledger accounting</span>
+                      </div>
+                    </a>
+                    <a href="product.html?id=virtualaccounts" class="mega-item">
+                      <div class="mega-item-icon">∞</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Virtual Accounts</span>
+                        <span class="mega-item-desc">Dynamic virtual accounts & ledger segregation</span>
+                      </div>
+                    </a>
+                    <a href="product.html?id=cards" class="mega-item">
+                      <div class="mega-item-icon">∞</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Cards</span>
+                        <span class="mega-item-desc">Issuance pipelines and payment processing rails</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!-- Column 2 -->
+                <div class="mega-col">
+                  <h4 class="mega-heading">Lending & Structured</h4>
+                  <div class="mega-links">
+                    <a href="product.html?id=commerciallending" class="mega-item">
+                      <div class="mega-item-icon">∞</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Commercial Lending</span>
+                        <span class="mega-item-desc">Corporate credit assessment & facilities management</span>
+                      </div>
+                    </a>
+                    <a href="product.html?id=retaillending" class="mega-item">
+                      <div class="mega-item-icon">∞</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Retail Lending</span>
+                        <span class="mega-item-desc">Automated consumer origination & credit scoring</span>
+                      </div>
+                    </a>
+                    <a href="product.html?id=tradefinance" class="mega-item">
+                      <div class="mega-item-icon">∞</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Trade Finance</span>
+                        <span class="mega-item-desc">Import/export credit & letter of credit cycles</span>
+                      </div>
+                    </a>
+                    <a href="product.html?id=structuredfinance" class="mega-item">
+                      <div class="mega-item-icon">∞</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Structured Finance</span>
+                        <span class="mega-item-desc">Asset-backed securitization & complex credit engines</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!-- Column 3 -->
+                <div class="mega-col">
+                  <h4 class="mega-heading">Liquidity & Cash</h4>
+                  <div class="mega-links">
+                    <a href="product.html?id=paymenthub" class="mega-item">
+                      <div class="mega-item-icon">∞</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Payment Hub</span>
+                        <span class="mega-item-desc">Universal payment orchestration and clearing rails</span>
+                      </div>
+                    </a>
+                    <a href="product.html?id=supplychain" class="mega-item">
+                      <div class="mega-item-icon">∞</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Supply Chain Finance</span>
+                        <span class="mega-item-desc">Receivables financing & early payment discounting</span>
+                      </div>
+                    </a>
+                    <a href="product.html?id=liquidity" class="mega-item">
+                      <div class="mega-item-icon">∞</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">LiquidityManagement</span>
+                        <span class="mega-item-desc">Dynamic sweeps, cash pooling, & yield optimization</span>
+                      </div>
+                    </a>
+                    <a href="product.html?id=treasury" class="mega-item">
+                      <div class="mega-item-icon">∞</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">TreasuryManagement</span>
+                        <span class="mega-item-desc">Risk boundaries, hedging strategies, & cash position</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!-- Column 4: Featured Showcase -->
+                <div class="mega-featured-col">
+                  <img src="images/featured_menu.png" alt="Product Framework Analytics" class="mega-featured-img">
+                  <span class="mega-featured-title">Infinity Ecosystem</span>
+                  <span class="mega-featured-desc">Deploy next-generation transaction environments with unified control planes.</span>
+                  <a href="contact.html" class="btn btn-primary" style="padding: 0.4rem 1rem; font-size: var(--fs-xs); width: fit-content; margin-top: 4px;">Request Sandbox</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <!-- Design Studios Mega Menu -->
+          <li class="nav-item has-mega-menu">
+            <a href="studio.html?id=workflow" class="nav-link has-submenu">Design Studios</a>
+            <div class="mega-menu-panel">
+              <div class="mega-grid">
+                <div class="mega-col">
+                  <h4 class="mega-heading">Core & Experience</h4>
+                  <div class="mega-links">
+                    <a href="studio.html?id=immersive" class="mega-item">
+                      <div class="mega-item-icon">✨</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Immersive Interface Studio</span>
+                        <span class="mega-item-desc">Spatial 3D overlays and AR/VR systems design</span>
+                      </div>
+                    </a>
+                    <a href="studio.html?id=cognitive" class="mega-item">
+                      <div class="mega-item-icon">🧠</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Cognitive Design Studio</span>
+                        <span class="mega-item-desc">Human-centered UI mapping & cognitive tests</span>
+                      </div>
+                    </a>
+                    <a href="studio.html?id=haptic" class="mega-item">
+                      <div class="mega-item-icon">⚡</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Haptic & Motion Studio</span>
+                        <span class="mega-item-desc">Fluid physics-based transition design</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="mega-col">
+                  <h4 class="mega-heading">Platform Systems</h4>
+                  <div class="mega-links">
+                    <a href="studio.html?id=workflow" class="mega-item">
+                      <div class="mega-item-icon">🔗</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Workflow DAG Studio</span>
+                        <span class="mega-item-desc">Visual state transition & process builder</span>
+                      </div>
+                    </a>
+                    <a href="studio.html?id=rules" class="mega-item">
+                      <div class="mega-item-icon">🔌</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Business Rules Canva</span>
+                        <span class="mega-item-desc">Logic-as-data rule evaluation graph</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="mega-col">
+                  <h4 class="mega-heading">AI & Trust Labs</h4>
+                  <div class="mega-links">
+                    <a href="studio.html?id=agentic" class="mega-item">
+                      <div class="mega-item-icon">🤖</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Agentic Systems Studio</span>
+                        <span class="mega-item-desc">LLM prompt-to-canvas graph generation</span>
+                      </div>
+                    </a>
+                    <a href="studio.html?id=security" class="mega-item">
+                      <div class="mega-item-icon">🛡️</div>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">Zero-Trust & PII Vault</span>
+                        <span class="mega-item-desc">4-eye Maker-Checker & PII Dynamic Masking</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="mega-featured-col">
+                  <img src="images/slider_cloud.png" alt="Canva Studio Interactive" class="mega-featured-img">
+                  <span class="mega-featured-title">Interactive Studios</span>
+                  <span class="mega-featured-desc">Explore visual logic node configuration with live DAG execution.</span>
+                  <a href="studio.html?id=workflow" class="btn btn-primary" style="padding: 0.4rem 1rem; font-size: var(--fs-xs); width: fit-content; margin-top: 4px;">Launch Studio</a>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Services Link -->
+          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">Company</a></li>
+        </ul>
+        <a href="contact.html" class="nav-cta">Initiate Consultation</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section style="padding: var(--space-2xl) 0; position: relative; z-index: 1;">
+      <div class="container">
+        
+        <!-- Header Title Banner -->
+        <div class="section-header" style="text-align: left; margin-bottom: var(--space-xl);">
+          <span class="stat-badge" id="productCategory">Product Engine</span>
+          <h1 style="font-size: var(--fs-3xl); font-weight: 800; margin-top: 8px; color: var(--text-primary);" id="productTitle">CoreBanking Engine</h1>
+          <p style="color: var(--text-secondary); font-size: var(--fs-base); max-width: 800px; margin-top: 12px;" id="productTagline">High-throughput real-time ledger accounting powered by a Logic-as-Data substrate and atomic transaction invariants.</p>
+        </div>
+
+        <!-- Interactive Graphical Simulator Section -->
+        <div class="simulator-box" style="margin-bottom: var(--space-2xl);">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: var(--space-sm); flex-wrap: wrap; gap: 12px;">
+            <div>
+              <span style="font-weight: 700; color: var(--text-primary); font-size: var(--fs-sm);" id="simTitle">Live System Flow Simulator</span>
+              <span style="font-size: var(--fs-xs); color: var(--text-muted); display: block;">ISO 20022 Data Normalization & Graph Execution Engine</span>
+            </div>
+            <div style="display: flex; gap: 12px; align-items: center;">
+              <button class="btn btn-primary" id="btnSimulate" style="padding: 0.4rem 1rem; font-size: var(--fs-xs);">▶ Run Execution Test</button>
+              <span style="font-size: var(--fs-xs); color: var(--accent-success); font-weight: 700;" id="simStatus">Status: Ready</span>
+            </div>
+          </div>
+
+          <!-- Flow Diagram Canvas -->
+          <div class="node-canvas">
+            <div class="node-card active" id="node1">
+              <div style="font-size: var(--fs-xs); color: var(--text-muted);">Step 1: Payload Ingestion</div>
+              <div style="font-weight: 700; font-size: var(--fs-sm); margin-top: 4px;" id="step1Title">SWIFT / DBF / XLSX</div>
+              <div style="font-size: 11px; color: var(--accent-primary); margin-top: 4px;" id="step1Desc">Multi-Format Adapter</div>
+            </div>
+            <div class="flow-connector">➔</div>
+            <div class="node-card" id="node2">
+              <div style="font-size: var(--fs-xs); color: var(--text-muted);">Step 2: Semantic Mapping</div>
+              <div style="font-weight: 700; font-size: var(--fs-sm); margin-top: 4px;">ISO 20022 Field Registry</div>
+              <div style="font-size: 11px; color: var(--accent-primary); margin-top: 4px;">Agentic Normalizer</div>
+            </div>
+            <div class="flow-connector">➔</div>
+            <div class="node-card" id="node3">
+              <div style="font-size: var(--fs-xs); color: var(--text-muted);">Step 3: Logic-as-Data</div>
+              <div style="font-weight: 700; font-size: var(--fs-sm); margin-top: 4px;">Graph Node Evaluation</div>
+              <div style="font-size: 11px; color: var(--accent-primary); margin-top: 4px;">Sub-millisecond Engine</div>
+            </div>
+            <div class="flow-connector">➔</div>
+            <div class="node-card" id="node4">
+              <div style="font-size: var(--fs-xs); color: var(--text-muted);">Step 4: Vault & Ledger</div>
+              <div style="font-weight: 700; font-size: var(--fs-sm); margin-top: 4px;">Atomic Rollback Commit</div>
+              <div style="font-size: 11px; color: var(--accent-primary); margin-top: 4px;">PII Masked & Audited</div>
+            </div>
+          </div>
+
+          <!-- Execution Telemetry Output -->
+          <div style="background: var(--bg-secondary); border-radius: var(--radius-sm); padding: 12px 16px; font-family: monospace; font-size: 12px; color: var(--text-primary); border: 1px solid var(--border-color);" id="simLog">
+            [System Log]: Select a product from the menu above to test dynamic execution telemetry...
+          </div>
+        </div>
+
+        <!-- Product Features & Architectural Specs Grid -->
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: var(--space-xl); align-items: start;">
+          <div>
+            <h2 style="font-size: var(--fs-xl); margin-bottom: var(--space-md);">Product Architectural Capabilities</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md);" id="featuresGrid">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+          <div>
+            <div class="glass-card" style="padding: var(--space-lg);">
+              <h3 style="font-size: var(--fs-md); margin-bottom: var(--space-sm); color: var(--accent-primary);">Enterprise Compliance</h3>
+              <ul style="padding-left: 18px; color: var(--text-secondary); font-size: var(--fs-xs); line-height: 1.8;">
+                <li><strong>ISO 20022 Native</strong>: Central field vocabulary</li>
+                <li><strong>PII Dynamic Data Masking</strong>: Zero raw PII logging</li>
+                <li><strong>4-Eye Governance</strong>: Maker-Checker security</li>
+                <li><strong>Kafka Outbox Pattern</strong>: Guaranteed delivery</li>
+                <li><strong>Atomic Ledger Rollback</strong>: Zero corruption risk</li>
+              </ul>
+              <a href="contact.html" class="btn btn-primary" style="width: 100%; margin-top: var(--space-md); font-size: var(--fs-xs); text-align: center;">Request Demo Environment</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" aria-label="Infinity Product Labs Home">
+            <span class="logo-icon" aria-hidden="true" style="border-radius: 4px;">∞</span>
+            <span class="logo-text">Infinity Product Labs</span>
+          </a>
+          <p>Architecting cognitive environments and cloud systems for high-performance scale.</p>
+        </div>
+        <div>
+          <h4 style="font-size: var(--fs-sm); font-weight: 700; margin-bottom: var(--space-sm);">Product Suite</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 2; font-size: var(--fs-xs);">
+            <li><a href="product.html?id=corebanking" style="color: var(--text-secondary); text-decoration: none;">CoreBanking</a></li>
+            <li><a href="product.html?id=bankingframework" style="color: var(--text-secondary); text-decoration: none;">BankingFramework</a></li>
+            <li><a href="product.html?id=paymenthub" style="color: var(--text-secondary); text-decoration: none;">Payment Hub</a></li>
+            <li><a href="product.html?id=tradefinance" style="color: var(--text-secondary); text-decoration: none;">Trade Finance</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size: var(--fs-sm); font-weight: 700; margin-bottom: var(--space-sm);">Design Studios</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 2; font-size: var(--fs-xs);">
+            <li><a href="studio.html?id=workflow" style="color: var(--text-secondary); text-decoration: none;">Workflow DAG Studio</a></li>
+            <li><a href="studio.html?id=rules" style="color: var(--text-secondary); text-decoration: none;">Business Rules Canva</a></li>
+            <li><a href="studio.html?id=agentic" style="color: var(--text-secondary); text-decoration: none;">Agentic AI Studio</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="border-top: 1px solid var(--border-color); margin-top: var(--space-xl); padding-top: var(--space-md); text-align: center; font-size: var(--fs-xs); color: var(--text-muted);">
+        <p>&copy; 2026 Infinity Product Labs. All computational vectors reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js?v=2.0"></script>
+  <script>
+    // Product Database & Interactive Router
+    const productsData = {
+      corebanking: {
+        category: "Core & Channels",
+        title: "CoreBanking Engine",
+        tagline: "High-throughput real-time ledger accounting powered by a Logic-as-Data substrate and atomic transaction invariants.",
+        step1: "ISO 20022 Payment Ingestion",
+        features: [
+          { title: "Atomic Ledger Accounting", desc: "Strict double-entry accounting transactions with sub-millisecond execution and complete rollback protection." },
+          { title: "Logic-as-Data Substrate", desc: "No hardcoded business rules. All accounting logic evaluated dynamically from JSON logic graph manifests." },
+          { title: "Dynamic Virtual Accounts", desc: "Segregate client cash pools and virtual ledgers in real-time with isolated balance tracking." },
+          { title: "Real-time Auditing Vault", desc: "Every transaction state is recorded into an immutable audit event stream with dynamic PII data masking." }
+        ]
+      },
+      bankingframework: {
+        category: "Core & Channels",
+        title: "BankingFramework Substrate",
+        tagline: "Universal financial logic & ledger substrate connecting core transaction systems to edge channels.",
+        step1: "API Payload Ingestion",
+        features: [
+          { title: "Universal Logic Manifests", desc: "Single contract binding Layer 1 visual canvases directly to FastAPI & Kafka backend execution nodes." },
+          { title: "Multi-Domain ISO Registry", desc: "Standardizes all financial fields into ISO 20022 field arrays across all banking channels." },
+          { title: "Dynamic State Transitions", desc: "Configurable workflow state machines that transition balances based on visual trigger nodes." },
+          { title: "Fault-Tolerant Resumability", desc: "Celery distributed workers with asynchronous checkpointing ensure zero data loss during high load spikes." }
+        ]
+      },
+      virtualaccounts: {
+        category: "Core & Channels",
+        title: "Virtual Accounts Engine",
+        tagline: "Dynamic virtual account creation, sub-ledger segregation, and cash pool management.",
+        step1: "Virtual Account Allocation",
+        features: [
+          { title: "Dynamic Sub-Ledger Segregation", desc: "Instantly create millions of isolated virtual ledgers under a single master physical account." },
+          { title: "Real-time Cash Pooling", desc: "Automated liquidity sweeps and multi-currency balance consolidation in real-time." },
+          { title: "Custom Routing Rules", desc: "Define inbound payment routing policies using visual logic-as-data rule manifests." },
+          { title: "Audit Trail Integrity", desc: "Full transaction lineage tracking with dynamic PII data masking on all logs." }
+        ]
+      },
+      cards: {
+        category: "Core & Channels",
+        title: "Cards & Issuance Rails",
+        tagline: "Real-time card authorization, balance reserves, and multi-rail payment processing.",
+        step1: "ISO 8583 / ISO 20022 Card Payload",
+        features: [
+          { title: "Sub-Millisecond Authorization", desc: "Validate card balance holds and spending limits in under 15ms via in-memory cache matrices." },
+          { title: "Dynamic Spend Limits", desc: "Enforce merchant-category and velocity controls configured via visual rule canvases." },
+          { title: "Multi-Currency Settlement", desc: "Real-time FX conversion and clearing settlement across VISA/Mastercard/UPI rails." },
+          { title: "Tokenized Vault Security", desc: "Zero PAN exposure with hardware security module (HSM) dynamic tokenization." }
+        ]
+      },
+      commerciallending: {
+        category: "Lending & Structured",
+        title: "Commercial Lending Engine",
+        tagline: "Automated corporate credit assessment, facility structuring, and syndicated loan management.",
+        step1: "Corporate Financial Ingestion",
+        features: [
+          { title: "Visual Credit Policy Canvas", desc: "Configure corporate debt-service coverage (DSCR) rules visually without redeploying code." },
+          { title: "Automated Facility Structuring", desc: "Dynamic tranche creation, multi-currency credit limits, and automated covenant monitoring." },
+          { title: "4-Eye Maker-Checker Approval", desc: "Mandatory multi-user authorization gates built directly into credit approval state transitions." },
+          { title: "Syndicated Risk Distribution", desc: "Real-time participant exposure tracking with dynamic fee distribution graphs." }
+        ]
+      },
+      retaillending: {
+        category: "Lending & Structured",
+        title: "Retail Lending & Origination Engine",
+        tagline: "Sub-second consumer credit scoring, loan origination, and automated disbursement.",
+        step1: "KYC & Bureau Data Payload",
+        features: [
+          { title: "Instant Credit Decisioning", desc: "Evaluate applicant creditworthiness using automated scoring models within 300ms." },
+          { title: "Flexible Repayment Schedules", desc: "Generate custom amortizations, compounding schedules, and grace periods dynamically." },
+          { title: "Automated Collections Workflow", desc: "Visual delinquency escalation pathways and automated payment retry triggers." },
+          { title: "Dynamic Rate Adjustments", desc: "Adjust interest benchmarks automatically based on central bank base rate changes." }
+        ]
+      },
+      tradefinance: {
+        category: "Lending & Structured",
+        title: "Trade Finance Platform",
+        tagline: "Import/export credit, letters of credit (LC), and automated document compliance validation.",
+        step1: "LC / Bill of Lading Document",
+        features: [
+          { title: "Agentic Document Parsing", desc: "Extracts terms from unstructured PDFs, DBFs, and XML trade documents into ISO fields automatically." },
+          { title: "Letter of Credit Workflow", desc: "Visual LC issuance, amendment, presentation, and payment settlement state machines." },
+          { title: "Sanctions & Compliance Audit", desc: "Real-time vessel tracking and sanctions list screening with PII dynamic data masking." },
+          { title: "Supply Chain Factoring", desc: "Early payment discounting and invoice verification with automated ledger credit." }
+        ]
+      },
+      structuredfinance: {
+        category: "Lending & Structured",
+        title: "Structured Finance & Securitization Engine",
+        tagline: "Asset-backed securitization, tranche waterfalls, and complex credit analytics.",
+        step1: "Asset Pool Portfolio Ingestion",
+        features: [
+          { title: "Tranche Waterfall Engine", desc: "Simulate cash flow distributions across Senior, Mezzanine, and Equity tranches dynamically." },
+          { title: "Stress Testing & Monte Carlo", desc: "Run high-velocity default rate simulations across 100,000 credit portfolios in seconds." },
+          { title: "Investor Reporting Vault", desc: "Generate immutable compliance audit packages and real-time yield distribution ledgers." },
+          { title: "Risk Mitigation Graph", desc: "Bind hedging instruments and interest rate swaps directly into tranche cash flow nodes." }
+        ]
+      },
+      paymenthub: {
+        category: "Liquidity & Cash",
+        title: "Payment Hub Orchestration Engine",
+        tagline: "Universal payment orchestration, clearing rails, and multi-format payload transformation.",
+        step1: "SWIFT / FedWire / ACH Payload",
+        features: [
+          { title: "Multi-Format File Transformation", desc: "Converts legacy SWIFT MT, DBF, XLSX, PDF, and XML messages into standardized ISO 20022 XML formats automatically." },
+          { title: "Sub-Second Fraud Validation", desc: "Evaluates multi-agent behavioral scoring models within 45 milliseconds prior to settlement." },
+          { title: "Kafka Transactional Outbox", desc: "Guarantees exact-once message delivery to clearing houses and downstream ledger nodes." },
+          { title: "Dynamic Fee & Tariff Graph", desc: "Calculates complex tiered routing fees using visual symbolic calculation graphs." }
+        ]
+      },
+      supplychain: {
+        category: "Liquidity & Cash",
+        title: "Supply Chain Finance & Factoring",
+        tagline: "Receivables financing, buyer-approved early payment discounting, and vendor portals.",
+        step1: "Vendor Invoice Payload",
+        features: [
+          { title: "Dynamic Early Payment Discounting", desc: "Calculate sliding-scale APR discounts based on payment acceleration timelines." },
+          { title: "ERP & Accounting Integration", desc: "Seamless multi-format data syncing with SAP, Oracle, and NetSuite ledgers." },
+          { title: "Buyer Approval Workflows", desc: "4-Eye Maker-Checker invoice verification with cryptographic audit logs." },
+          { title: "Automated Disbursement Rails", desc: "Instant supplier payouts via local clearing networks and real-time virtual accounts." }
+        ]
+      },
+      liquidity: {
+        category: "Liquidity & Cash",
+        title: "Liquidity Management Engine",
+        tagline: "Dynamic cash sweeps, zero-balance accounting (ZBA), and automated yield optimization.",
+        step1: "Multi-Entity Balance Feed",
+        features: [
+          { title: "Automated Cash Sweeping", desc: "Execute automated target-balance and zero-balance sweeps across global bank accounts." },
+          { title: "Cross-Border Pooling", desc: "Notional pooling and interest optimization across multi-jurisdictional subsidiaries." },
+          { title: "Real-time Cash Forecasting", desc: "Predictive ML cash position forecasting powered by historical transaction graph telemetry." },
+          { title: "Liquidity Barrier Guards", desc: "Set strict min/max liquidity thresholds with automated alerts and reserve triggers." }
+        ]
+      },
+      treasury: {
+        category: "Liquidity & Cash",
+        title: "Treasury Management System",
+        tagline: "Enterprise risk boundaries, FX hedging strategies, and real-time cash position monitoring.",
+        step1: "FX & Market Rate Feed",
+        features: [
+          { title: "Real-time FX Position Tracking", desc: "Monitor multi-currency exposures live with sub-second portfolio revaluation." },
+          { title: "Automated Derivative Hedging", desc: "Bind forward contracts and options to underlying commercial cash flows automatically." },
+          { title: "Risk Boundary Enforcement", desc: "Hard-stop risk limits configured via visual rule canvases with zero hardcoded code." },
+          { title: "Regulatory Capital Reporting", desc: "Generate Basel III / IV capital adequacy and liquidity coverage ratio (LCR) reports." }
+        ]
+      }
+    };
+
+    // Load active product from URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id') || 'corebanking';
+    const activeProduct = productsData[productId] || productsData['corebanking'];
+
+    // Render Product Details
+    document.getElementById('productCategory').innerText = activeProduct.category;
+    document.getElementById('productTitle').innerText = activeProduct.title;
+    document.getElementById('productTagline').innerText = activeProduct.tagline;
+    document.getElementById('step1Title').innerText = activeProduct.step1;
+
+    const featuresGrid = document.getElementById('featuresGrid');
+    featuresGrid.innerHTML = activeProduct.features.map(f => `
+      <div class="glass-card" style="padding: var(--space-md);">
+        <h4 style="font-size: var(--fs-sm); color: var(--accent-primary); margin-bottom: 6px;">✓ ${f.title}</h4>
+        <p style="color: var(--text-secondary); font-size: var(--fs-xs); line-height: 1.5;">${f.desc}</p>
+      </div>
+    `).join('');
+
+    // Simulator Interactive Script
+    const btnSimulate = document.getElementById('btnSimulate');
+    const simStatus = document.getElementById('simStatus');
+    const simLog = document.getElementById('simLog');
+
+    btnSimulate.addEventListener('click', () => {
+      let step = 1;
+      simStatus.innerText = "Status: Executing Graph...";
+      simStatus.style.color = "var(--accent-secondary)";
+      
+      const interval = setInterval(() => {
+        document.querySelectorAll('.node-card').forEach(n => n.classList.remove('active'));
+        const activeNode = document.getElementById(`node${step}`);
+        if (activeNode) activeNode.classList.add('active');
+
+        if (step === 1) {
+          simLog.innerText = `[${new Date().toLocaleTimeString()}] INGESTION: Received raw payload for ${activeProduct.title}. Normalizing headers...`;
+        } else if (step === 2) {
+          simLog.innerText = `[${new Date().toLocaleTimeString()}] SEMANTIC BLOODSTREAM: Mapped fields to ISO 20022 registry. Dynamic data masking applied.`;
+        } else if (step === 3) {
+          simLog.innerText = `[${new Date().toLocaleTimeString()}] DETERMINISTIC ENGINE: Logic-as-Data graph evaluated in 0.42ms. Zero hardcoded rules triggered.`;
+        } else if (step === 4) {
+          simLog.innerText = `[${new Date().toLocaleTimeString()}] VAULT COMMIT: Transaction committed to PostgreSQL ledger with Kafka Outbox relay. Status 200 OK.`;
+          simStatus.innerText = "Status: Completed (0.42ms)";
+          simStatus.style.color = "var(--accent-success)";
+          clearInterval(interval);
+        }
+        step++;
+      }, 700);
+    });
+  </script>
+</body>
+</html>
